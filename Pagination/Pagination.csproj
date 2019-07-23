@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>7622899c-26b6-4be0-b930-c15c44f2fdce</ProjectGuid>
+    <ProjectGuid>{7622899C-26B6-4BE0-B930-C15C44F2FDCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Pagination</RootNamespace>
@@ -31,24 +31,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ConditionString.cs" />
+    <Compile Include="MultipleResultStoreProc\DbContextProc.cs" />
+    <Compile Include="MultipleResultStoreProc\ModelProc\TableA.cs" />
+    <Compile Include="MultipleResultStoreProc\ModelProc\TableB.cs" />
+    <Compile Include="MultipleResultStoreProc\MultipleResultStore.cs" />
+    <Compile Include="PaginationAndFilter.cs" />
+    <Compile Include="PaginationFilterOnModel.cs" />
+    <Compile Include="Pagination\Condition\SQLAutofilter.cs" />
+    <Compile Include="Pagination\Condition\SQLPage.cs" />
+    <Compile Include="Pagination\Condition\SQLSort.cs" />
+    <Compile Include="Pagination\Condition\SQLWhere.cs" />
+    <Compile Include="Pagination\Installer\EXEC_installer.cs" />
+    <Compile Include="Pagination\Installer\EXEC_s_Pagination.cs" />
+    <Compile Include="Pagination\Installer\Starter.cs" />
+    <Compile Include="Pagination\Pagination.cs" />
+    <Compile Include="Pagination\Response.cs" />
+    <Compile Include="Pagination\ResponseJSON.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="MultipleResultStoreProc\ReadMe.md" />
+    <None Include="packages.config" />
+    <None Include="Pagination\ReadMe.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

@@ -1,0 +1,1 @@
+﻿# Multiple result strop procedure
